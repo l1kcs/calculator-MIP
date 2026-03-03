@@ -57,3 +57,16 @@ keypad.addEventListener('click', (e) => {
 
     display.innerText = currentInput;
 });
+
+// Додаємо статус оточення на екран (НАД калькулятором)
+const statusDiv = document.createElement('div');
+statusDiv.style.textAlign = 'center';
+statusDiv.style.marginBottom = '15px'; // Змінили відступ на нижній
+statusDiv.style.color = '#666';
+statusDiv.style.fontSize = '12px';
+statusDiv.style.position = 'absolute'; // Щоб він не ламав Flexbox-центрування body
+statusDiv.style.top = '20px';          // Відступ від верхнього краю екрана
+// Vite надає доступ до змінних через import.meta.env
+statusDiv.innerText = `Режим: ${import.meta.env.VITE_APP_STATUS}`;
+// Додаємо елемент на самий початок body
+document.body.prepend(statusDiv);

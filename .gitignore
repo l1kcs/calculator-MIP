@@ -19,3 +19,18 @@ build/ [cite: 221]
 coverage/
 playwright-report/
 test-results/
+
+# IDE та редактори (щоб конфігурації твого VS Code не заважали іншим)
+.vscode/
+.idea/
+
+# Тимчасові файли Vite та кеш лінтера
+.vite/
+.eslintcache
+
+# Локальні змінні оточення (додатково до .env)
+.env.local
+.env.*.local
+
+# Тимчасові файли TypeScript (якщо Vite їх згенерує)
+*.tsbuildinfo
