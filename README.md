@@ -1,3 +1,4 @@
+[![Calculator CI/CD Pipeline](https://github.com/l1kcs/calculator-MIP/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/l1kcs/calculator-MIP/actions/workflows/ci-cd.yml)
 # 🧮 Web Calculator MVP
 
 Сучасний веб-калькулятор із базовими математичними операціями. [cite_start]Проєкт розроблено з акцентом на чисту архітектуру та багаторівневе тестування бізнес-логіки й інтерфейсу [cite: 265, 298-299].
