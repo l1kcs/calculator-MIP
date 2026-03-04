@@ -1,4 +1,13 @@
 import { calculateResult } from './calculator.js';
+import posthog from 'posthog-js';
+
+posthog.init('phc_dRPmHZkSGuZhx4qmXFzWdJOnNmzmqU6eXorTZhJYhd6', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only', // Записуємо лише ідентифікованих або всіхʼ
+    defaults: '2026-01-30'
+});
+
+// Твій попередній імпорт calculator.js та інший код залишається нижче...
 
 let currentInput = '0';
 let previousInput = null;
