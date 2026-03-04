@@ -54,6 +54,13 @@ keypad.addEventListener('click', (e) => {
     if (action === 'calculate') {
         if (currentOperator === null || shouldResetScreen) return;
         currentInput = calculateResult(previousInput, currentOperator, currentInput);
+        
+        // НОВЕ: Відправляємо кастомну подію про успішне обчислення
+        posthog.capture('calculate_performed', {
+            operator_used: currentOperator,
+            result_length: currentInput.toString().length
+        });
+        
         currentOperator = null;
         shouldResetScreen = true;
     }
@@ -62,6 +69,11 @@ keypad.addEventListener('click', (e) => {
         currentInput = '0';
         previousInput = null;
         currentOperator = null;
+        
+        // НОВЕ: Відправляємо кастомну подію про очищення (можлива ознака помилки користувача)
+        posthog.capture('calculator_cleared', {
+            reason: 'user_reset'
+        });
     }
 
     display.innerText = currentInput;
