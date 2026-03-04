@@ -7,6 +7,16 @@ posthog.init('phc_dRPmHZkSGuZhx4qmXFzWdJOnNmzmqU6eXorTZhJYhd6', {
     defaults: '2026-01-30'
 });
 
+// Перевіряємо, чи увімкнений прапорець у PostHog
+posthog.onFeatureFlags(() => {
+    if (posthog.isFeatureEnabled('show-advanced-mode')) {
+        console.log('Advanced mode is ENABLED in PostHog!');
+        // Тут міг би бути код: document.getElementById('my-new-btn').style.display = 'block';
+    } else {
+        console.log('Advanced mode is DISABLED.');
+    }
+});
+
 // Твій попередній імпорт calculator.js та інший код залишається нижче...
 
 let currentInput = '0';
